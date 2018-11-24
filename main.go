@@ -3,10 +3,14 @@ package main
 import (
 	"fmt"
 	"github.com/turnage/graw/reddit"
+	"redit-bot/cmd"
 )
 
 func main() {
+	cmd.Execute()
+}
 
+func test() {
 	//Create Bot
 	bot, err := reddit.NewBotFromAgentFile("C:\\Users\\qhasan\\go\\src\\reddit\\bot.agent", 0)
 
@@ -29,5 +33,4 @@ func main() {
 	for _, post := range harvest.Posts[:5] {
 		fmt.Printf("[%s] posted [%s]\n", post.Author, post.Title)
 	}
-
 }
