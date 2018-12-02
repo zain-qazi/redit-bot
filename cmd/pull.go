@@ -8,10 +8,10 @@ import (
 )
 
 //PullCmd Command for fetching content
-var PullCmd = &cobra.Command{
+var PullCmd = &cobra.Command {
 	Use:   "pull",
-	Short: "Pull Content from Sub-Reddit",
-	Long:  "Pull Content from Sub-Reddit",
+	Short: "Pull Content from a path in Reddit",
+	Long:  "Pull Content from a path in Reddit",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Fetch time")
 
@@ -34,7 +34,7 @@ var PullCmd = &cobra.Command{
 
 		status, err := bot.Pull(path)
 
-		if(err != nil) {
+		if err != nil {
 			fmt.Println("Error when trying to pull Reddit listings for: ", path)
 		} else {
 			fmt.Println("Pull completed with status: ", status)

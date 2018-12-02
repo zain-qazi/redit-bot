@@ -1,6 +1,7 @@
 package core
 
 import (
+	"github.com/turnage/graw"
 	"fmt"
 	"github.com/turnage/graw/reddit"
 )
@@ -48,4 +49,29 @@ func (r *RedditBot) Pull(path string) (bool, error) {
 			fmt.Printf("%s posted %s\n", post.Author, post.Title)
 		}
 		return true, nil
+}
+
+//Post PostHandler that handles Post events
+func (r *RedditBot) Post(p *reddit.Post) error {
+	fmt.Println("Received new Post...")
+	fmt.Println("Title: ", p.Title)
+	fmt.Println("Text: ", p.SelfText)
+	fmt.Println("Author: ", p.Author)
+	return nil
+}
+
+//Subscribe subscribe to a path in Reddit
+func (r *RedditBot) Subscribe(path string) error {
+	cfg := graw.Config{Subreddits: []string{path}}
+	fmt.Println("Bot is ", r.Bot)
+	fmt.Println("Handler is ", r)
+	fmt.Println("Config is ", cfg)
+	if _ ,wait, err := graw.Run(r, r.Bot, cfg); err != nil {
+		fmt.Println("Failed to start graw run: ", err)
+		return err
+	} else {
+		fmt.Println("Graw run kicked off... ", wait())
+		return nil
+	}
+	
 }

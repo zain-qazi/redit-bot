@@ -30,6 +30,7 @@ func init() {
 
 	//Sub commands
 	RootCmd.AddCommand(PullCmd)
+	RootCmd.AddCommand(ListenCmd)
 
 	//Flags for sub command
 	//PullCmd.Flags().IntVarP("")
