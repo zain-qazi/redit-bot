@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
-	"redit-bot/cmd"
+	"github.com/zianKazi/redit-bot/cmd"
 )
 
 func main() {

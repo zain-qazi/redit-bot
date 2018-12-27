@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"redit-bot/core"
+	"github.com/zianKazi/redit-bot/core"
 
 	"github.com/spf13/cobra"
 )

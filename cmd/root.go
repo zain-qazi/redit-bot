@@ -2,9 +2,7 @@ package cmd
 
 import (
 	"fmt"
-
 	"github.com/spf13/cobra"
-	//"github.com/turnage/graw/reddit"
 )
 
 //RootCmd Root command for the application
