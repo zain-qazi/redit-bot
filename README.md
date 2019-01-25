@@ -15,3 +15,6 @@ go env
 
 #To run the reddit bot 
 sudo docker run -it --rm -v ~/go:/app --name redit-bot-running redit-bot redit-bot pull --path="/r/news" --agent-config "/app/bot.agent"
+
+#Command to listen. The path cannot have "/r/"
+./redit-bot listen --path="news" --agent-config "/home/zain/go/bot.agent"

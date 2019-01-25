@@ -23,7 +23,6 @@ func init() {
 	RootCmd.MarkPersistentFlagRequired("path")
 	RootCmd.PersistentFlags().String("agent-config", "", "Location of the Agent file.")
 	RootCmd.MarkPersistentFlagRequired("agent-config")
-	RootCmd.PersistentFlags().Bool("subscribe", false, "Subscribe for new content")
 	RootCmd.PersistentFlags().BoolP("verbose", "v", false, "Verbose execution")
 
 	//Sub commands
@@ -31,6 +30,6 @@ func init() {
 	RootCmd.AddCommand(ListenCmd)
 
 	//Flags for sub command
-	//PullCmd.Flags().IntVarP("")
+	PullCmd.Flags().Bool("subscribe", false, "Subscribe for new content")
 
 }
